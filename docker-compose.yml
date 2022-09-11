@@ -44,7 +44,7 @@ services:
     restart: "always"
 
   original_mail_server:
-    image: "postfix"
+    image: "arvieira/mailserver"
     container_name: "OriginalMailServer"
     volumes:
       - "./volumes/mail_server/original/postfix:/etc/postfix"
@@ -65,7 +65,7 @@ services:
     restart: "always"
 
   attacker_mail_server:
-    image: "postfix"
+    image: "arvieira/mailserver"
     container_name: "AttackerMailServer"
     volumes:
       - "./volumes/mail_server/attacker/postfix:/etc/postfix"
@@ -111,7 +111,7 @@ services:
     restart: "always"
 
   client:
-    image: "client"
+    image: "arvieira/client"
     container_name: "client"
     ports:
       - "22:22"
