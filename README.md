@@ -33,6 +33,6 @@ Para realizar os testes do cenário de ataque deve-se seguir a seguinte sequênc
   * Enviar alguns emails entre as contas user1@poc.exemplo e user2@poc.exemplo
   * Verificar se os mesmos constam na caixa de entrada e saída do respectivo usuário
   * Modificar os arquivos db.poc.exemplo e db.rev.poc.exemplo localizados em volumes/dns_server/bind trocando os endereços IP do servidor web e de e-mail para os números dos atacantes
-  * Reiniciar o servidor de nomes com docker exec DNSServer "service named restart"
+  * Reiniciar o servidor de nomes com docker exec DNSServer service named restart
   * Realizar novamente os acessos ao servidor web e de email
   * Enviar novos emails para as contas user1@poc.exemplo e user2@poc.exemplo
