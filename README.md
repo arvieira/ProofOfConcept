@@ -36,3 +36,10 @@ Para realizar os testes do cenário de ataque deve-se seguir a seguinte sequênc
   * Reiniciar o servidor de nomes com docker exec DNSServer service named restart
   * Realizar novamente os acessos ao servidor web e de email
   * Enviar novos emails para as contas user1@poc.exemplo e user2@poc.exemplo
+  * Verificar o que foi acessado no servidor web e o que quais e-mails se tem acesso no servidor de e-mail
+  * Retornar os valores corretos dos endereços IP dos servidores web e de e-mail
+  * Verificar novamente o que se pode ser acessado nos dois serviços.
+
+
+## Resultados Obtidos
+
