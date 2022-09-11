@@ -1,0 +1,18 @@
+;
+; BIND data file for example
+;
+$TTL	604800
+@	IN	SOA	ns1.poc.exemplo. perito.poc.exemplo. (
+			      7		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+
+; Name servers
+	IN	NS	ns1.poc.exemplo.
+
+; PTR Records
+100	IN	PTR	ns1.poc.exemplo.
+101	IN	PTR	www.poc.exemplo.
+103	IN	PTR	mail.poc.exemplo.

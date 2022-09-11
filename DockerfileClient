@@ -1,0 +1,22 @@
+# Essa linha coloca qual vai ser a imagem e versão da base para construir o container
+FROM ubuntu:jammy
+
+# Indica o mantenedor da imagem, no caso, eu
+#MAINTENER Andre Vieira <andreribeirovieira@gmail.com>
+
+# Instalando dependências com o apt-get
+RUN apt-get -yqq update
+RUN apt-get -yqq install net-tools dnsutils iputils-ping
+RUN apt-get -yqq install openssh-server vim sudo 
+RUN apt-get -yqq install lynx
+RUN apt-get -yqq install s-nail
+RUN apt-get -yqq install mutt
+
+RUN useradd -rm -d /home/perito -s /bin/bash -g root -G sudo -u 1000 perito
+RUN  echo 'perito:12345' | chpasswd
+
+RUN service ssh start
+EXPOSE 22
+
+
+CMD ["/usr/sbin/sshd", "-D"]

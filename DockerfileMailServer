@@ -1,0 +1,22 @@
+# Essa linha coloca qual vai ser a imagem e versão da base para construir o container
+FROM ubuntu:jammy
+
+# Indica o mantenedor da imagem, no caso, eu
+#MAINTENER Andre Vieira <andreribeirovieira@gmail.com>
+
+# Instalando dependências com o apt-get
+RUN apt-get -yqq update
+RUN DEBIAN_FRONTEND=noninteractive apt-get -yqq install postfix
+RUN apt-get -yqq install dovecot-core dovecot-pop3d dovecot-imapd
+
+RUN groupadd user1
+RUN useradd -rm -d /home/user1 -s /bin/bash -g user1 -G sudo -u 1000 user1
+RUN  echo 'user1:12345' | chpasswd
+
+RUN groupadd user2
+RUN useradd -rm -d /home/user2 -s /bin/bash -g user2 -G sudo -u 1001 user2
+RUN  echo 'user2:12345' | chpasswd
+
+EXPOSE 25 465 587 143 993 110 995
+
+CMD ["postfix", "start-fg"]

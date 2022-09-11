@@ -1,0 +1,22 @@
+###
+# User info
+###
+
+set imap_user="user1" #your IMAP user name or login
+set imap_pass="12345" #your IMAP password
+
+set smtp_url = "smtp://user1:12345@mail.poc.exemplo:25/"
+
+set from = "user1@poc.exemplo"
+set realname = "user1"
+
+set folder = "imap://mail.poc.exemplo:143/"
+set spoolfile = "+INBOX"
+set postponed="+Drafts"
+
+# set header_cache=~/.mutt/cache/headers
+# set message_cachedir=~/.mutt/cache/bodies
+# set certificate_file=~/.mutt/certificates
+
+# set move = no
+
